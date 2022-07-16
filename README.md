@@ -1,84 +1,41 @@
-
-
-local mobs = {} 
-getgenv().mob = nil 
-
-for _,v in pairs(game:GetService("Workspace").NPC:GetChildren()) do
-    insert = true 
-    for _,v2 in pairs(mobs) do if v2 == v.Name then insert = false end end 
-    if insert then table.insert(mobs, v.Name) end 
-end
-
--- MOBS
-for _,v in pairs(game:GetService("Workspace").NPC:GetChildren()) do
-    insert = true 
-    for _,v2 in pairs(mobs) do if v2 == v.Name then insert = false end end 
-    if insert then table.insert(mobs, v.Name) end 
-end
--- CREDIT Kavo Libary
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("GLUE", "DarkTheme") 
+local Window = Library.CreateLib("dekpok Hup", "Midnight")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto farm kaido")
 
--- auto farm
-local Main = Window:NewTab("Main")
-local MobFarmSection = Main:NewSection("Mob Farm")
-
-local mobdropdown = MobFarmSection:NewDropdown("Choose Mob", "Chooses the mob to autofarm", mobs, function(v)
-    getgenv().mob = v
+Section:NewToggle("attack and auto quest", "light Only", function(e)
+opened = e
 end)
 
-MobFarmSection:NewToggle("Start Mob Farm", "Toggles the autofarming of the mobs", function(v)
-    getgenv().autofarmmobs = v
-    while wait() do
-        if getgenv().autofarmmobs == false then return end 
-        if getgenv().mob == nil then 
-            game.StarterGui:SetCore("SendNotification", {
-                Title = "!! FAIL !!", 
-                Text = "Please choose your MOBS",
-                Icon = "",
-                Duration = 2.5
-            })
-            getgenv().autofarmmobs = false
-            return
-        end
-        local mob = game:GetService("Workspace").NPC:FindFirstChild(getgenv().mob)
-        if mob == nil then
-            game.StarterGui:SetCore("SendNotification", { 
-                Title = "Info!",
-                Text = "There is currently no spawned mobs of this type!\nJust wait until they spawn", 
-                Icon = "", 
-                Duration = 2.5
-            })
-            while wait() do 
-                wait() 
-                if getgenv().autofarmmobs == false then return end 
-                if game:GetService("Workspace").NPC:FindFirstChild(getgenv().mob) ~= nil then break; end
-            end 
-        else
-            local mob2 = mob
-            while wait() do
-                mob = game:GetService("Workspace").NPC:FindFirstChild(getgenv().mob)
-                if mob ~= mob2 then break; end
-                if getgenv().autofarmmobs == false then return end
-                if mob ~= nil then
-                    if mob:FindFirstChild("Humanoid") then
-                        if mob.Humanoid.Health == 0 then wait(0.1) mob:Destroy() break; end 
-                    end
-                    if mob:FindFirstChild("HumanoidRootPart") then
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = mob.HumanoidRootPart.CFrame * CFrame.new(0,0,4) 
-                        
-                          game:GetService'VirtualUser':CaptureController()
-game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-                    end
-                end
-            end
-        end
-    end
+spawn(function()
+while wait() do
+if opened then
+	pcall(function()
+local plr = game.Players.LocalPlayer
+   plr.Character.Light.X.Fire:FireServer()
+end)
+end
+end
 end)
 
-local Tab = Window:NewTab("Auto Equip")
-local Section = Tab:NewSection("Auto Equip")
+
+
+spawn(function()
+while wait() do
+if opened then
+pcall(function()
+	fireclickdetector(game:GetService("Workspace")["KAIDO ISLANDDDDDDDD"]["KAIDOUU QUESTTT"].ClickPart.ClickDetector)
+game:GetService("Players").LocalPlayer.PlayerGui.QuestTake.Accept1.RemoteEvent:FireServer()
+end)
+end
+end
+end)
+
+
+ 
+
+
+
 
 local Weaponlist = {}
 local Weapon = nil
@@ -87,11 +44,11 @@ for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) 
     table.insert(Weaponlist,v.Name)
 end
 
-Section:NewDropdown("select weapon", " ", Weaponlist, function(currentOption)
+Section:NewDropdown("select weapon", "light Only", Weaponlist, function(currentOption)
     Weapon = currentOption
 end)
 
-Section:NewToggle("Auto Equip", " ", function(a)
+Section:NewToggle("Auto Equip and tp", "light Only", function(a)
 AutoEquiped = a
 end)
 
@@ -100,38 +57,14 @@ while wait() do
 if AutoEquiped then
 pcall(function()
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))
+game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.P,false,game)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-281.998077, 87751.5078, 832.938599, -0.057226032, -3.93335604e-08, -0.99836123, -4.62326888e-08, 1, -3.67480695e-08, 0.99836123, 4.405398e-08, -0.057226032) 
 end)
 end
 end
 end)
 
-Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightControl, function()
+Section:NewKeybind("Keybind", "Keybind", Enum.KeyCode.RightControl, function()
 	Library:ToggleUI()
 end)
 
-
-
-
--- UPDATE MOBS
-
-game:GetService("Workspace").NPC.ChildAdded:Connect(function() 
-    for _,v2 in pairs(mobs) do table.remove(mobs, _) end
-    
-    for _,v in pairs(game:GetService("Workspace").NPC:GetChildren()) do
-        insert = true 
-        for _,v2 in pairs(mobs) do if v2 == v.Name then insert = false end end
-        if insert then table.insert(mobs, v.Name) end 
-    end
-    mobdropdown:Refresh(mobs)
-end)
-
-game:GetService("Workspace").NPC.ChildRemoved:Connect(function() 
-    for _,v2 in pairs(mobs) do table.remove(mobs, _) end 
-    
-    for _,v in pairs(game:GetService("Workspace").NPC:GetChildren()) do 
-        insert = true 
-        for _,v2 in pairs(mobs) do if v2 == v.Name then insert = false end end 
-        if insert then table.insert(mobs, v.Name) end 
-    end
-    mobdropdown:Refresh(mobs)
-end)
