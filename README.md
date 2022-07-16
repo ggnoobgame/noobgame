@@ -13,6 +13,7 @@ if opened then
 	pcall(function()
 local plr = game.Players.LocalPlayer
    plr.Character.Light.X.Fire:FireServer()
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-281.998077, 87751.5078, 832.938599, -0.057226032, -3.93335604e-08, -0.99836123, -4.62326888e-08, 1, -3.67480695e-08, 0.99836123, 4.405398e-08, -0.057226032) 
 end)
 end
 end
@@ -58,7 +59,6 @@ if AutoEquiped then
 pcall(function()
 game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))
 game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.P,false,game)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-281.998077, 87751.5078, 832.938599, -0.057226032, -3.93335604e-08, -0.99836123, -4.62326888e-08, 1, -3.67480695e-08, 0.99836123, 4.405398e-08, -0.057226032) 
 end)
 end
 end
