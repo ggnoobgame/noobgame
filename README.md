@@ -1,4 +1,6 @@
-   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-281.998077, 87751.5078, 832.938599, -0.057226032, -3.93335604e-08, -0.99836123, -4.62326888e-08, 1, -3.67480695e-08, 0.99836123, 4.405398e-08, -0.057226032) 
+if game.PlaceId == 7258239416 then 
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-281.998077, 87751.5078, 832.938599, -0.057226032, -3.93335604e-08, -0.99836123, -4.62326888e-08, 1, -3.67480695e-08, 0.99836123, 4.405398e-08, -0.057226032) 
+end
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("dekpok Hup", "Synapse")
@@ -23,17 +25,25 @@ end)
 
 
 spawn(function()
-while wait() do
+while wait(10) do
 if opened then
 pcall(function()
 	fireclickdetector(game:GetService("Workspace")["KAIDO ISLANDDDDDDDD"]["KAIDOUU QUESTTT"].ClickPart.ClickDetector)
+end)
+end
+end
+end)
+
+spawn(function()
+while wait() do
+if opened then
+pcall(function()
+game:GetService("Players").LocalPlayer.PlayerGui.QuestTake.Accept1.RemoteEvent:FireServer()
 game:GetService("Players").LocalPlayer.PlayerGui.QuestTake.Accept1.RemoteEvent:FireServer()
 end)
 end
 end
 end)
-
-
  
 
 
@@ -46,11 +56,11 @@ for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) 
     table.insert(Weaponlist,v.Name)
 end
 
-Section:NewDropdown("select weapon", "light Only", Weaponlist, function(currentOption)
+Section:NewDropdown("select weapon", "light", Weaponlist, function(currentOption)
     Weapon = currentOption
 end)
 
-Section:NewToggle("Auto Equip and tp", "light Only", function(a)
+Section:NewToggle("Auto Equip", "light Only", function(a)
 AutoEquiped = a
 end)
 
@@ -110,11 +120,10 @@ Section:NewButton("GOD ROOM", " ", function()
 end)
 
 Section:NewButton("BLUE", " ", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(........)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1888.81958, 87686.3594, 926.190247, -0.995853186, 0, -0.0909752697, 0, 1, 0, 0.0909752697, 0, -0.995853186)
 end)
-
-local Tab = Window:NewTab("Teleport")
-local Section = Tab:NewSection("To")
+local Tab = Window:NewTab("Random")
+local Section = Tab:NewSection(" ")
 
 Section:NewToggle("random fruit or GOD BOX", " ", function(d)
 randomed = d
@@ -124,8 +133,17 @@ spawn(function()
 while wait() do
 if randomed then
 	pcall(function()
-local plr = game.Players.LocalPlayer
-   plr.Character.Light.X.Fire:FireServer()
+fireclickdetector(game:GetService("Workspace")["Blue Island"].GodBox.ClickDetector)
+end)
+end
+end
+end)
+
+spawn(function()
+while wait() do
+if randomed then
+	pcall(function()
+fireclickdetector(game:GetService("Workspace")["STARTER ISLAND [ Lv 1+ ]"].Shop[" "].RANDOM)
 end)
 end
 end
