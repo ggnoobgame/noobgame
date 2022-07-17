@@ -1,3 +1,5 @@
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-281.998077, 87751.5078, 832.938599, -0.057226032, -3.93335604e-08, -0.99836123, -4.62326888e-08, 1, -3.67480695e-08, 0.99836123, 4.405398e-08, -0.057226032) 
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("dekpok Hup", "Synapse")
 local Tab = Window:NewTab("Main")
@@ -13,7 +15,6 @@ if opened then
 	pcall(function()
 local plr = game.Players.LocalPlayer
    plr.Character.Light.X.Fire:FireServer()
-   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-281.998077, 87751.5078, 832.938599, -0.057226032, -3.93335604e-08, -0.99836123, -4.62326888e-08, 1, -3.67480695e-08, 0.99836123, 4.405398e-08, -0.057226032) 
 end)
 end
 end
@@ -106,4 +107,26 @@ end)
 
 Section:NewButton("GOD ROOM", " ", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3641.05542, 147.76944, 3840.04199, 0.710120559, -8.50669224e-08, -0.704080105, 1.07318023e-07, 1, -1.25812258e-08, 0.704080105, -6.66262991e-08, 0.710120559)
+end)
+
+Section:NewButton("BLUE", " ", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(........)
+end)
+
+local Tab = Window:NewTab("Teleport")
+local Section = Tab:NewSection("To")
+
+Section:NewToggle("random fruit or GOD BOX", " ", function(d)
+randomed = d
+end)
+
+spawn(function()
+while wait() do
+if randomed then
+	pcall(function()
+local plr = game.Players.LocalPlayer
+   plr.Character.Light.X.Fire:FireServer()
+end)
+end
+end
 end)
