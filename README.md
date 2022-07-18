@@ -134,6 +134,12 @@ while wait() do
 if randomed then
 	pcall(function()
 fireclickdetector(game:GetService("Workspace")["Blue Island"].GodBox.ClickDetector)
+fireclickdetector(game:GetService("Workspace")["Blue Island"].GodBox.ClickDetector)
+fireclickdetector(game:GetService("Workspace")["Blue Island"].GodBox.ClickDetector)
+fireclickdetector(game:GetService("Workspace")["Blue Island"].GodBox.ClickDetector)
+fireclickdetector(game:GetService("Workspace")["Blue Island"].GodBox.ClickDetector)
+fireclickdetector(game:GetService("Workspace")["Blue Island"].GodBox.ClickDetector)
+fireclickdetector(game:GetService("Workspace")["Blue Island"].GodBox.ClickDetector)
 end)
 end
 end
@@ -148,3 +154,54 @@ end)
 end
 end
 end)
+
+Section:NewToggle("random yoruv3", " ", function(d)
+randomed = d
+end)
+
+spawn(function()
+while wait() do
+if randomed then
+	pcall(function()
+fireclickdetector(game:GetService("Workspace")["DAK ISLAND [Lv 1350+]"]["Yoru V3 random"].ClickDetector)
+	fireclickdetector(game:GetService("Workspace")["DAK ISLAND [Lv 1350+]"]["Yoru V3 random"].ClickDetector)
+
+fireclickdetector(game:GetService("Workspace")["DAK ISLAND [Lv 1350+]"]["Yoru V3 random"].ClickDetector)
+	fireclickdetector(game:GetService("Workspace")["DAK ISLAND [Lv 1350+]"]["Yoru V3 random"].ClickDetector)
+	fireclickdetector(game:GetService("Workspace")["DAK ISLAND [Lv 1350+]"]["Yoru V3 random"].ClickDetector)
+
+fireclickdetector(game:GetService("Workspace")["DAK ISLAND [Lv 1350+]"]["Yoru V3 random"].ClickDetector)
+end)
+end
+end
+end)
+
+local Tab = Window:NewTab("autostat fruit")
+local Section = Tab:NewSection("To")
+
+Section:NewToggle("autostat fruit", " ", function(r)
+stat = r
+end)
+
+spawn(function()
+while wait() do
+if stat then
+	pcall(function()
+
+			local args = {
+    [1] = "DevilFruit"
+}
+
+game:GetService("ReplicatedStorage").StatSystem.Points:FireServer(unpack(args))
+		
+end)
+end
+end
+end)
+	
+		
+        
+
+
+
+
