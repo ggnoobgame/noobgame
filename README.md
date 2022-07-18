@@ -155,13 +155,13 @@ end
 end
 end)
 
-Section:NewToggle("random yoruv3", " ", function(d)
-randomed = d
+Section:NewToggle("random yoruv3", " ", function(y)
+asd = y
 end)
 
 spawn(function()
 while wait() do
-if randomed then
+if asd then
 	pcall(function()
 fireclickdetector(game:GetService("Workspace")["DAK ISLAND [Lv 1350+]"]["Yoru V3 random"].ClickDetector)
 	fireclickdetector(game:GetService("Workspace")["DAK ISLAND [Lv 1350+]"]["Yoru V3 random"].ClickDetector)
