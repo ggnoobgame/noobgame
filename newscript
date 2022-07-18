@@ -123,7 +123,7 @@ Section:NewButton("BLUE", " ", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1888.81958, 87686.3594, 926.190247, -0.995853186, 0, -0.0909752697, 0, 1, 0, 0.0909752697, 0, -0.995853186)
 end)
 local Tab = Window:NewTab("Random")
-local Section = Tab:NewSection(" ")
+local Section = Tab:NewSection("dont turn on auto farm if random")
 
 Section:NewToggle("random fruit or GOD BOX", " ", function(d)
 randomed = d
