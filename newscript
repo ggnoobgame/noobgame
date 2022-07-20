@@ -156,12 +156,12 @@ end
 end)
 
 Section:NewToggle("random yoruv3", " ", function(y)
-asd = y
+yoruv3 = y
 end)
 
 spawn(function()
 while wait() do
-if asd then
+if yoruv3 then
 	pcall(function()
 fireclickdetector(game:GetService("Workspace")["DAK ISLAND [Lv 1350+]"]["Yoru V3 random"].ClickDetector)
 	fireclickdetector(game:GetService("Workspace")["DAK ISLAND [Lv 1350+]"]["Yoru V3 random"].ClickDetector)
@@ -184,7 +184,7 @@ stat = r
 end)
 
 spawn(function()
-while wait() do
+while wait(0.1) do
 if stat then
 	pcall(function()
 
@@ -198,10 +198,3 @@ end)
 end
 end
 end)
-	
-		
-        
-
-
-
-
