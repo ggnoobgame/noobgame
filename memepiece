@@ -1,0 +1,116 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("hk Hub", "DarkTheme")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto Equip")
+
+
+
+
+
+Section:NewToggle("Auto kill", " ", function(k)
+killed = k
+end)
+
+spawn(function()
+while wait() do
+if killed then
+pcall(function()
+game:GetService("Workspace").Mobs.Soul["Soul Heart"].Humanoid.Health = die
+game:GetService("Workspace").Mobs.Soul["Soul Heart "].Humanoid.Health = die
+game:GetService("Workspace").Mobs.Soul["Soul Heart  "].Humanoid.Health = die
+game:GetService("Workspace").Mobs.Soul["Soul Heart   "].Humanoid.Health = die
+end)
+end
+end
+end)
+
+
+spawn(function()
+while wait() do
+if killed then
+pcall(function()
+game:GetService("Workspace").SoulKey.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame 
+end)
+end
+end
+end)
+
+
+spawn(function()
+while wait() do
+if killed then
+pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Mobs.Soul["Soul Heart"].HumanoidRootPart.CFrame * CFrame.new(0,0,60)
+end)
+end
+end
+end)
+
+
+
+
+Section:NewToggle("Auto soul", " ", function(a)
+tped = a
+end)
+
+spawn(function()
+while wait() do
+if tped then
+pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3559.38477, 4088.95947, -6922.28711, 1, -2.67615796e-08, 0.000234493986, 2.67771476e-08, 1, -6.63845228e-08, -0.000234493986, 6.63907969e-08, 1)
+end)
+end
+end
+end)
+
+spawn(function()
+while wait() do
+if tped then
+pcall(function()
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack["Iron Sword"])
+game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.Backspace,false,game)
+end)
+end
+end
+end)
+
+
+--spawn(function()
+--while wait() do
+--if tped then
+--pcall(function()
+--fireclickdetector(game:GetService("Workspace").BLUEDOOR.ClickDetector)
+--end)
+--end
+--end
+--end)
+
+spawn(function()
+while wait() do
+if tped then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace").Boss:GetChildren()) do
+	if v.Name == "Fuffy Gear 7" or "Fuffy Gear 6" then
+		v.Humanoid.Health = die
+	end
+end
+end)
+end
+end
+end)
+
+spawn(function()
+while wait() do
+if tped then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace").Boss:GetChildren()) do
+	if game:GetService("Workspace").Boss["Fuffy Gear 6"].Humanoid.Health == 0 or game:GetService("Workspace").Boss["Fuffy Gear 7"].Humanoid.Health == 0 then
+		game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.E,false,game) -- Press E key.
+wait(5)
+fireclickdetector(game:GetService("Workspace").BLUEDOOR.ClickDetector)
+	end
+end
+end)
+end
+end
+end)
