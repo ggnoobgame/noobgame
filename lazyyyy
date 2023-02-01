@@ -58,6 +58,24 @@ end
 end
 end)
 
+Section:NewToggle("Q John", " ", function(z)
+Audd = z
+end)
+
+spawn(function()
+while wait() do
+if Audd then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+	if v.name == "John" then
+		v.Humanoid.Health  = die
+	end
+end
+end)
+end
+end
+end)
+
 Section:NewToggle("Q Ice Master", " ", function(o)
 AutoEqu = o
 end)
