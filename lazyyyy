@@ -40,6 +40,24 @@ end
 end
 end)
 
+Section:NewToggle("Q Tanky Monster", " ", function(h)
+Aud = h
+end)
+
+spawn(function()
+while wait() do
+if Aud then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+	if v.name == "Tanky Monster" then
+		v.Humanoid.Health  = die
+	end
+end
+end)
+end
+end
+end)
+
 Section:NewToggle("Q Ice Master", " ", function(o)
 AutoEqu = o
 end)
@@ -102,5 +120,13 @@ Section:NewKeybind("Keybind", "Keybind", Enum.KeyCode.RightControl, function()
 end)
 
 if game.PlaceId == 11189305210 then
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9829.77344, 1.04352295, 290.295685, 0.917115867, -0.33532992, -0.215527683, 0.318267673, 0.941528738, -0.110586219, 0.240008369, 0.0328248739, 0.970215678)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GateModel.Gate.CFrame
 end
+
+if game.PlaceId == 12264299372 then
+	while wait() do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-217.152802, 3560.37085, -5545.27637, 0.599122226, -1.09726246e-08, -0.80065757, 9.96048684e-08, 1, 6.08285831e-08, 0.80065757, -1.16193156e-07, 0.599122226)
+	end
+end
+
+
