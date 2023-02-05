@@ -1,8 +1,7 @@
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("s Hub", "DarkTheme")
 local Tab = Window:NewTab("Main")						
-local Section = Tab:NewSection("Auto Raid")
+local Section = Tab:NewSection("รันตอนอยู่ในดัน")
 
 Section:NewToggle("Q Monster", " ", function(a)
 AutoEquiped = a
@@ -13,8 +12,8 @@ while wait() do
 if AutoEquiped then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-	if v.name == "Monster" then
-		v.Humanoid.Health  = d
+	if v.name == "Monster" then 
+		v.Humanoid.Health  = die
 	end
 end
 end)
@@ -32,7 +31,7 @@ if AutoEquipe then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 	if v.name == "Troll Monster" then
-		v.Humanoid.Health  = d
+		v.Humanoid.Health  = die
 	end
 end
 end)
@@ -58,16 +57,52 @@ end
 end
 end)
 
-Section:NewToggle("Q John", " ", function(z)
-Audd = z
+Section:NewToggle("Q John", " ", function(i)
+Audde = i
 end)
 
 spawn(function()
 while wait() do
-if Audd then
+if Audde then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 	if v.name == "John" then
+		v.Humanoid.Health  = die
+	end
+end
+end)
+end
+end
+end)
+
+Section:NewToggle("Q Archer Monster", " ", function(w)
+Auwdde = w
+end)
+
+spawn(function()
+while wait() do
+if Auwdde then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+	if v.name == "Archer Monster" then
+		v.Humanoid.Health  = die
+	end
+end
+end)
+end
+end
+end)
+
+Section:NewToggle("Q Warrior Monster", " ", function(g)
+Augwdde = g
+end)
+
+spawn(function()
+while wait(5) do
+if Augwdde then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+	if v.name == "Warrior Monster" then
 		v.Humanoid.Health  = die
 	end
 end
@@ -86,7 +121,7 @@ if AutoEqu then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 	if v.name == "Ice Master" then
-		v.Humanoid.Health  = d
+		v.Humanoid.Health  = die
 	end
 end
 end)
@@ -104,7 +139,7 @@ if AutoEquipde then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 	if v.name == "Light Master" then
-		v.Humanoid.Health  = d
+		v.Humanoid.Health  = die
 	end
 end
 end)
@@ -122,7 +157,43 @@ if AutoEquipea then
 pcall(function()
 for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 	if v.name == "Quake Master" then
-		v.Humanoid.Health  = d
+		v.Humanoid.Health  = die
+	end
+end
+end)
+end
+end
+end)
+
+Section:NewToggle("Q Lightning Master", " ", function(j)
+AsutoEquipea = j
+end)
+
+spawn(function()
+while wait() do
+if AsutoEquipea then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+	if v.name == "Lightning Master" then
+		v.Humanoid.Health  = die
+	end
+end
+end)
+end
+end
+end)
+
+Section:NewToggle("Q Dragon Master", " ", function(q)
+AsutoEequipea = q
+end)
+
+spawn(function()
+while wait() do
+if AsutoEequipea then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+	if v.name == "Dragon Master" then
+		v.Humanoid.Health  = die
 	end
 end
 end)
@@ -141,10 +212,11 @@ if game.PlaceId == 11189305210 then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GateModel.Gate.CFrame
 end
 
-if game.PlaceId == 12264299372 then
-	while wait() do
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-217.152802, 3560.37085, -5545.27637, 0.599122226, -1.09726246e-08, -0.80065757, 9.96048684e-08, 1, 6.08285831e-08, 0.80065757, -1.16193156e-07, 0.599122226)
-	end
-end
+
+	if game.PlaceId == 12264299372 then
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-255.079697, 3462.0874, -5484.05518, -0.0285624936, -1.00510107e-08, 0.999592006, 8.53596482e-09, 1, 1.02990212e-08, -0.999592006, 8.82664786e-09, -0.0285624936)
+		end
+
+
 
 
