@@ -75,6 +75,24 @@ end
 end
 end)
 
+Section:NewToggle("Q Spy", " ", function(x)
+Audjde = x
+end)
+
+spawn(function()
+while wait() do
+if Audjde then
+pcall(function()
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+	if v.name == "Spy" then
+		v.Humanoid.Health  = die
+	end
+end
+end)
+end
+end
+end)
+
 Section:NewToggle("Q Archer Monster", " ", function(w)
 Auwdde = w
 end)
@@ -216,7 +234,6 @@ end
 	if game.PlaceId == 12264299372 then
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-255.079697, 3462.0874, -5484.05518, -0.0285624936, -1.00510107e-08, 0.999592006, 8.53596482e-09, 1, 1.02990212e-08, -0.999592006, 8.82664786e-09, -0.0285624936)
 		end
-
 
 
 
